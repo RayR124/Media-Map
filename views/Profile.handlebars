@@ -31,8 +31,6 @@
 
 </div>
 
-
-
 <script>
 
     document.getElementById("searchInput").addEventListener("click", () => {
@@ -79,13 +77,10 @@
 
                 // poster, title, rating, releaseDate, overview
 
-
-
                 const title = document.createElement('h3');
                 title.classList.add('card-title');
                 title.textContent = result.title;
                 info.appendChild(title);
-
 
                 const rating = document.createElement('div');
                 rating.classList.add('card-rating');
@@ -101,7 +96,6 @@
                 overview.classList.add('overview');
                 overview.textContent = result.overview;
                 info.appendChild(overview);
-
 
                 console.log((`Movie: ${result.title}\n  \nReleased in: ${result.release_date}\n  \nAverage Rating: ${result.vote_average}\n ID: ${result.id} \nOverview: ${result.overview}`))
 
@@ -122,22 +116,18 @@
                         const providers = Object.values(providerMap).join(", ");
                         const streamingPlatform = document.createElement('div');
                         streamingPlatform.classList.add('streaming-platform');
-                        streamingPlatform.textContent = "You can stream this on: " + providers;
+                        streamingPlatform.textContent = "You can stream this on: " + providers = ".";
                         console.log(providers);
                         info.appendChild(streamingPlatform);
                     })
             }
         })
-
-
-
     });
 
     async function storeFavorite(favoriteButton, movieResult) {
-        //        console.log(favoriteButton, movieResult);
+        //console.log(favoriteButton, movieResult);
         favoriteButton.style.setProperty("--favorite-color", "red");
         //add API fetch to pst movie route
-
         //update UI
         const movieData = { title: movieResult.title, poster: movieResult.poster_path, rating: movieResult.vote_average, releaseDate: movieResult.release_date, overview: movieResult.overview };
         console.log(movieData);
@@ -151,9 +141,7 @@
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-
             body: JSON.stringify(movieData)
-
         });
 
         const createdMovie = await favMovie.json();
@@ -168,20 +156,19 @@
             credentials: 'same-origin', // include, *same-origin, omit
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
+                //'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(savedMovie) // body data type must match "Content-Type" header
         });
         return await response.json(); // parses JSON response into native JavaScript objects
         console.log(savedMovie);
     }
-
 </script>
 
 <script>
     document.getElementById("logoutButton").addEventListener("click", () => {
         event.preventDefault();
-        //        console.log("clicking logout")
+        //console.log("clicking logout")
         window.location.replace('/')
     })
 </script>

@@ -8,11 +8,10 @@ movieRouter.post("/", async (req, res) => {
     const movie = await Movie.create({
       title,
       poster,
-      rating,
+      rating: rating.toString(),
       releaseDate,
-      overview,  
+      overview,
     });
-    console.log('movie saved',movie);
     return res.json(movie);
   } catch (err) {
     console.log(err);
