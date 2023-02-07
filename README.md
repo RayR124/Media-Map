@@ -18,7 +18,7 @@ A one-stop web-App wherein a user can search for the name of any given movie and
 
 ## Installation
 
--This is a simple web app. No installation is necessary. Simply visit the URL (provided here (update later)), create an account, and start searching for your favorite movies and/or TV shows. It's really that simple.
+-This is a simple web app. No installation is necessary. Simply visit the URL https://media-map-app.herokuapp.com, create an account, and start searching for your favorite movies and/or TV shows. It's really that simple.
 
 ## Usage
 
